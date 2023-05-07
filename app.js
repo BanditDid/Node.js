@@ -2,7 +2,7 @@ const express = require('express');
 const part = require("path");
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT;
 
 app.use(express.static(part.join(__dirname,"/docs/")))
 
@@ -14,8 +14,8 @@ res.send("Hell Word222");
 
 })
 
-app.listen(port,() => {
-console.log("List on port",port);
-
+app.listen(PORT,() => {
+console.log("List on port",PORT);
+debug("List on port:" + PORT);
 
 })
